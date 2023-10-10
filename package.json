@@ -1,0 +1,29 @@
+{
+  "name": "backend-user-express",
+  "version": "1.0.0",
+  "description": "Projeto Express CRUD completo de Usuário em memória",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./index.js",
+    "dev": "nodemon ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salomao86/backend-user-express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/salomao86/backend-user-express/issues"
+  },
+  "homepage": "https://github.com/salomao86/backend-user-express#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
