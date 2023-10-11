@@ -1,124 +1,75 @@
-const users = [
-    {
-        nome: "Olga Pimenta Xavier",
-        dataNascimento: "25/12/1960",
-        cpf: "08656534378",
-        genero: "Femenino",
-        endereco: {
-            logradouro: "Rua Seis A",
-            numero: "1",
-            cidade: "São Luís",
-            uf: "MA",
-            cep: "65055-341",
-            bairro: "Jardim São Cristóvão II",
-            pais: "Brasil"
-        },
-        email: "olga.xavier@mail.com",
-        senha: "%1yYRmJ@z(J7"
-    },
-    {
-        nome: "Agenor Rodrigues Rosa",
-        dataNascimento: "Agenor Rodrigues Rosa",
-        genero: "Masculino",
-        cpf: "89752253806",
-        endereco: {
-            logradouro: "Rua I",
-            numero: "1",
-            cidade: "Vila Velha",
-            uf: "ES",
-            cep: "29113-032",
-            bairro: "Vale Encantado",
-            pais: "Brasil"
-        },
-        email: "agenor.rosa@mail.com",
-        senha: "1l0QHoKwlS"
-    },
-    {
-        nome: "Jovenil Pessoa Bento",
-        dataNascimento: "14/05/2016",
-        genero: "Masculino",
-        cpf: "72662964634",
-        endereco: {
-            logradouro: "Rua Joaquim Carneiro",
-            numero: "1",
-            cidade: "Magé",
-            uf: "RJ",
-            cep: "25902-073",
-            bairro: "Nova Marília",
-            pais: "Brasil"
-        },
-        email: "jovenil.bento@mail.com.br",
-        senha: "ut7&al9lpTfs"
-    }
-]
+const userService = require('../services/user.service');
 
-const find = (req, res) => {
-    const cpf = req.params.id.replace(/\D/g,'');
-    let found = false;
-    users.map(function(valor) {
-        if (valor.cpf == cpf) {
-            found = true;
-            return res.send(valor);
+const findAllUserController = async (req, res) => {
+    try {
+        res.send(await userService.findUserService());
+    } catch (err) {
+        res.status(500).send({ message: "Erro inesperado, tente novamente mais tarde" });
+        console.log(err.message);
+    }
+};
+
+const findUserByIdController = async (req, res) => {
+    try {
+        const user = await userService.findUserByIdService(req.params.id);
+
+        if (!user) {
+            res.status(404).send({ message: "Usuário não encontrado, tente novamente!" });
+        } else {
+            res.status(200).send(user);
         }
-    });
 
-    if (!found) {
-        res.status(404).send({message: `Não foi encontrado usuário com cpf ${cpf}`});
-    }
-    
-}
-
-const findAllUsers = (req, res) => {
-    res.send(users);
-}
-
-const createUser = (req, res) => {
-    const user = req.body;
-    user.cpf = user.cpf.replace(/\D/g,'');
-    users.push(user);
-    return res.status(201).json({ message: 'Usuário criado com sucesso', user });
-}
-
-const updateUser = (req, res) => {
-    const cpf = req.params.id.replace(/\D/g,'');
-    const user = req.body;
-    user.cpf = user.cpf.replace(/\D/g,'');
-    let found = false;
-
-    users.map(function(valor, index) {
-        if (valor.cpf == cpf) {
-            found = true;
-            users[index] = user;
-            return res.status(201).json({ message: 'Usuário atualizado com sucesso', user });
+    } catch (err) {
+        if (err) {
+            console.log(err.kind == "ObjectId");
+            return res.status(400).send({ message: "ID informado está errado, tente novamente" });
         }
-    });
-
-    if (!found) {
-        res.status(404).send({message: `Não foi encontrado usuário com cpf ${cpf}`});
+        res.status(500).send({ message: "Erro inesperado, tente novamente mais tarde" });
+        console.log(err.message);
     }
-    
-}
+};
 
-const deleteUser = (req, res) => {
-    const cpf = req.params.id.replace(/\D/g,'');
-    let found = false;
-    users.map(function(valor, index) {
-        if (valor.cpf == cpf) {
-            found = true;
-            users.splice(index, 1);
-            return res.send(valor);
+const createUserController = async (req, res) => {
+    try {
+        const corpo = {
+            ...req.body,
+            createdAt: new Date(),
         }
-    });
-
-    if (!found) {
-        res.status(404).send({message: `Não foi encontrado usuário com cpf ${cpf}`});
+        res.send(await userService.createUserService(corpo));
+    } catch (err) {
+        res.status(500).send({ message: "Erro inesperado, tente novamente mais tarde" });
+        console.log(err.message);
     }
-}
+};
+
+const updateUserController = async (req, res) => {
+    try {
+        res.send(await userService.updateUserService(req.params.id, req.body));
+    } catch (err) {
+        res.status(500).send({ message: "Erro inesperado, tente novamente mais tarde" });
+        console.log(err.message);
+    }
+};
+
+const deleteUserController = async (req, res) => {
+    try {
+        const del = await userService.deleteUserService(req.params.id);
+        if(del != null ){
+            res.status(200).send({ message: 'deletado com sucesso!' });
+        } else {
+            res.status(404).send({ message: 'Usuario não encontrado para deletar' });
+        }
+
+    } catch (err) {
+        res.status(500).send({ message: "Erro inesperado, tente novamente mais tarde" });
+        console.log(err.message);
+    }
+};
 
 module.exports = {
-    find,
-    findAllUsers,
-    createUser,
-    updateUser,
-    deleteUser
+    findAllUserController,
+    findUserByIdController,
+    createUserController,
+    updateUserController,
+    deleteUserController
 }

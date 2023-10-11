@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "user-express",
-    "dateExported": "2023-10-10T03:34:21.485Z",
+    "dateExported": "2023-10-11T03:15:53.202Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -9,7 +9,7 @@
             "_id": "52414dff-d13a-45ab-93a8-784d5cd1222c",
             "colId": "1aceeade-3741-44b8-b69f-a97c74b46c8c",
             "containerId": "",
-            "name": "teste",
+            "name": "teste-conexao",
             "url": "{{url}}",
             "method": "GET",
             "sortNum": 10000,
@@ -28,9 +28,13 @@
             "method": "GET",
             "sortNum": 20000,
             "created": "2023-10-09T23:28:13.872Z",
-            "modified": "2023-10-09T23:29:59.516Z",
+            "modified": "2023-10-11T02:58:48.023Z",
             "headers": [],
             "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjYwNDY0YzJmMGQ0MDI4NmMzN2ZhNyIsImlhdCI6MTY5Njk5MzEwMiwiZXhwIjoxNjk3MDc5NTAyfQ.3fNYo0UwdfRKBH09guChlNpWaq-CsN1h5ZbCpcR0Luc"
+            },
             "tests": []
         },
         {
@@ -42,9 +46,13 @@
             "method": "GET",
             "sortNum": 40000,
             "created": "2023-10-09T23:30:45.889Z",
-            "modified": "2023-10-09T23:43:50.063Z",
+            "modified": "2023-10-11T02:59:02.678Z",
             "headers": [],
             "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjYwNDY0YzJmMGQ0MDI4NmMzN2ZhNyIsImlhdCI6MTY5Njk5MzEwMiwiZXhwIjoxNjk3MDc5NTAyfQ.3fNYo0UwdfRKBH09guChlNpWaq-CsN1h5ZbCpcR0Luc"
+            },
             "tests": []
         },
         {
@@ -52,13 +60,17 @@
             "colId": "1aceeade-3741-44b8-b69f-a97c74b46c8c",
             "containerId": "",
             "name": "deleteUser",
-            "url": "{{url}}/user/delete/89752253806",
+            "url": "{{url}}/user/delete/652612d58cdb747075d7072c",
             "method": "DELETE",
             "sortNum": 50000,
             "created": "2023-10-09T23:43:07.813Z",
-            "modified": "2023-10-09T23:44:53.343Z",
+            "modified": "2023-10-11T03:14:01.268Z",
             "headers": [],
             "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjYwNDY0YzJmMGQ0MDI4NmMzN2ZhNyIsImlhdCI6MTY5Njk5MzEwMiwiZXhwIjoxNjk3MDc5NTAyfQ.3fNYo0UwdfRKBH09guChlNpWaq-CsN1h5ZbCpcR0Luc"
+            },
             "tests": []
         },
         {
@@ -81,20 +93,89 @@
             "tests": []
         },
         {
-            "_id": "af996218-ca7c-40e8-a9a0-ba391bb38fb1",
+            "_id": "c9efc8f3-1fbd-4854-8e37-d49d39391b42",
             "colId": "1aceeade-3741-44b8-b69f-a97c74b46c8c",
             "containerId": "",
-            "name": "updateUser",
-            "url": "{{url}}/user/update/72662964634",
-            "method": "PUT",
-            "sortNum": 70000,
-            "created": "2023-10-10T03:26:38.507Z",
-            "modified": "2023-10-10T03:29:15.910Z",
+            "name": "createUser 2",
+            "url": "{{url}}/user/create",
+            "method": "POST",
+            "sortNum": 65000,
+            "created": "2023-10-11T03:01:56.893Z",
+            "modified": "2023-10-11T03:02:51.119Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nome\": \"Laisa Machado \",\n  \"dataNascimento\": \"16/06/1962\",\n  \"genero\": \"Femenino\",\n  \"cpf\": \"72662964634\",\n  \"endereco\": {\n    \"logradouro\": \"Quadra QN 7 Área Especial 7\",\n    \"numero\": \"1\",\n    \"cidade\": \"Brasília\",\n    \"uf\": \"DF\",\n    \"cep\": \"71805-737\",\n    \"bairro\": \"Riacho Fundo I\",\n    \"pais\": \"Brasil\"\n  },\n  \"email\": \"laisa.vitorino@mail.com.br\",\n  \"senha\": \"xjOhbNvxCA2@\"\n}",
+                "raw": "{\n  \"nome\": \"Olga Pimenta Xavier\",\n  \"dataNascimento\": \"25/12/1960\",\n  \"cpf\": \"08656534378\",\n  \"genero\": \"Femenino\",\n  \"endereco\": {\n    \"logradouro\": \"Rua Seis A\",\n    \"numero\": \"1\",\n    \"cidade\": \"São Luís\",\n    \"uf\": \"MA\",\n    \"cep\": \"65055-341\",\n    \"bairro\": \"Jardim São Cristóvão II\",\n    \"pais\": \"Brasil\"\n  },\n  \"email\": \"olga.xavier@mail.com\",\n  \"senha\": \"%1yYRmJ@z(J7\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjYwNDY0YzJmMGQ0MDI4NmMzN2ZhNyIsImlhdCI6MTY5Njk5MzEwMiwiZXhwIjoxNjk3MDc5NTAyfQ.3fNYo0UwdfRKBH09guChlNpWaq-CsN1h5ZbCpcR0Luc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "05878acb-bb68-4abd-955f-7a120f689fbf",
+            "colId": "1aceeade-3741-44b8-b69f-a97c74b46c8c",
+            "containerId": "",
+            "name": "createUser 3",
+            "url": "{{url}}/user/create",
+            "method": "POST",
+            "sortNum": 67500,
+            "created": "2023-10-11T03:03:03.199Z",
+            "modified": "2023-10-11T03:04:27.320Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nome\": \"Jovenil Pessoa Bento\",\n  \"dataNascimento\": \"14/05/2016\",\n  \"genero\": \"Masculino\",\n  \"cpf\": \"72662964634\",\n  \"endereco\": {\n    \"logradouro\": \"Rua Joaquim Carneiro\",\n    \"numero\": \"1\",\n    \"cidade\": \"Magé\",\n    \"uf\": \"RJ\",\n    \"cep\": \"25902-073\",\n    \"bairro\": \"Nova Marília\",\n    \"pais\": \"Brasil\"\n  },\n  \"email\": \"jovenil.bento@mail.com.br\",\n  \"senha\": \"ut7&al9lpTfs\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjYwNDY0YzJmMGQ0MDI4NmMzN2ZhNyIsImlhdCI6MTY5Njk5MzEwMiwiZXhwIjoxNjk3MDc5NTAyfQ.3fNYo0UwdfRKBH09guChlNpWaq-CsN1h5ZbCpcR0Luc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "af996218-ca7c-40e8-a9a0-ba391bb38fb1",
+            "colId": "1aceeade-3741-44b8-b69f-a97c74b46c8c",
+            "containerId": "",
+            "name": "updateUser",
+            "url": "{{url}}/user/update/65260464c2f0d40286c37fa7",
+            "method": "PUT",
+            "sortNum": 70000,
+            "created": "2023-10-10T03:26:38.507Z",
+            "modified": "2023-10-11T03:01:08.627Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"endereco\": {\n      \"logradouro\": \"Quadra QN 7 Área Especial 7\",\n      \"numero\": 1,\n      \"cidade\": \"Brasília\",\n      \"uf\": \"DF\",\n      \"cep\": \"71805-737\",\n      \"bairro\": \"Riacho Fundo I\",\n      \"pais\": \"Brasil\"\n    },\n    \"_id\": \"65260464c2f0d40286c37fa7\",\n    \"nome\": \"Laisa de Machado Assis\",\n    \"dataNascimento\": \"16/06/1962\",\n    \"cpf\": \"526.454.911-70\",\n    \"genero\": \"Femenino\",\n    \"email\": \"laisa.vitorino@mail.com.br\",\n    \"senha\": \"xjOhbNvxCA2@\",\n    \"createdAt\": \"2023-10-11T02:11:48.526Z\",\n    \"admin\": false,\n    \"__v\": 0\n  }",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjYwNDY0YzJmMGQ0MDI4NmMzN2ZhNyIsImlhdCI6MTY5Njk5MzEwMiwiZXhwIjoxNjk3MDc5NTAyfQ.3fNYo0UwdfRKBH09guChlNpWaq-CsN1h5ZbCpcR0Luc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "76a8899d-adbe-43d8-bd7b-8d21c31ba0f5",
+            "colId": "1aceeade-3741-44b8-b69f-a97c74b46c8c",
+            "containerId": "",
+            "name": "/login",
+            "url": "{{url}}/auth/login",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2023-10-11T02:06:26.475Z",
+            "modified": "2023-10-11T02:54:28.319Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"laisa.vitorino@mail.com.br\",\n  \"senha\": \"xjOhbNvxCA2@\"\n}",
                 "form": []
             },
             "tests": []

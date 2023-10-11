@@ -1,11 +1,13 @@
 const router = require("express").Router();
-const user = require("../controllers/user.controller");
+const userController = require("../controllers/user.controller");
+const authValidator = require("../validators/auth.validator");
 const userValidator = require('../validators/user.validator');
 
-router.get("/find/:id", user.find);
-router.get("/findAll", user.findAllUsers);
-router.post("/create", userValidator.validationBodyRules, userValidator.checkRules, user.createUser);
-router.put("/update/:id", userValidator.validationBodyRules, userValidator.checkRules, user.updateUser);
-router.delete("/delete/:id", user.deleteUser);
+router.get("/find/:id", authValidator, userController.findAllUserController);
+router.get("/findAll", authValidator, userController.findAllUserController);
+
+router.post("/create", authValidator, userValidator.validationBodyRules, userValidator.checkRules, userController.createUserController);
+router.put("/update/:id", authValidator, userValidator.validationBodyRules, userValidator.checkRules, userController.updateUserController);
+router.delete("/delete/:id", authValidator, userController.deleteUserController);
 
 module.exports = router;
