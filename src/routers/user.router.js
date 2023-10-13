@@ -3,7 +3,7 @@ const userController = require("../controllers/user.controller");
 const authValidator = require("../validators/auth.validator");
 const userValidator = require('../validators/user.validator');
 
-router.get("/find/:id", authValidator, userController.findAllUserController);
+router.get("/find/:id", authValidator, userController.findUserByIdController);
 router.get("/findAll", authValidator, userController.findAllUserController);
 
 router.post("/create", authValidator, userValidator.validationBodyRules, userValidator.checkRules, userController.createUserController);
