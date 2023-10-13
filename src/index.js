@@ -10,6 +10,7 @@ const auth = require("./routers/auth.router");
 const user = require("./routers/user.router");
 
 app.use(express.json());
+app.use(cors());
 connectToDatabase();
 
 app.use("/user", user);
